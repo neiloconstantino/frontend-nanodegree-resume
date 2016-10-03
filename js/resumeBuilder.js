@@ -108,7 +108,13 @@ $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
 $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
 if (typeof bio.skills != "undefined" && bio.skills != null && bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart.replace("%data%", bio.skills));
+    $("#header").append(HTMLskillsStart);
+
+    for (var i = 0; i < bio.skills.length; i++){
+        $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+    }
+    
+
 }
 
 function displayWork() {
