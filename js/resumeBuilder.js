@@ -1,5 +1,5 @@
 var bio = {
-    "name" : "Neil O. Constantino",
+    "name" : "Neil Constantino",
     "role" : "Software Engineer",
     "contacts" : {
         "mobile" : "(909) 720-7080",
@@ -128,3 +128,15 @@ function displayWork() {
 }
 
 displayWork();
+
+$("#main").append(internationalizeButton);
+
+/* Function that takes a string of two names and returns an internationalized version */
+function inName(name){
+    name = name.trim().split(" ");
+    name[0] = name[0][0].toUpperCase() + name[0].slice(1).toLowerCase();
+    name[1] = name[1].toUpperCase();
+    name = name.join(" ");
+
+    return name;
+}
