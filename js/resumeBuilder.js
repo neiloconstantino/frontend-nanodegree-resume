@@ -5,7 +5,7 @@ var bio = {
         "mobile" : "(909) 720-7080",
         "email" : "neiloconstantino@gmail.com",
         "github" : "neiloconstantino",
-        "location" : "Los Angeles"
+        "location" : "Los Angeles, CA, USA"
     },
     "welcomeMessage" : "Hello World!",
     "skills" : ["HTML",  "CSS", "JavaScript", "jQuery", "Bootstrap"],
@@ -55,7 +55,8 @@ var work = {
         {
             "employer" : "United States Air Force",
             "title" : "Reservist / Captain",
-            "dates" : "2014 - present"
+            "dates" : "2014 - present",
+            "description" : "TODO: fill out description"
         },
         {
             "employer" : "United States Air Force",
@@ -77,7 +78,7 @@ var work = {
         },
         {
             "employer" : "Conexant",
-            "title" : "Verification & Test Engineer",
+            "title" : "Design Verification & Test Engineer",
             "dates" : "2006 - 2008",
             "description" : "TODO: fill out description"
         }
@@ -94,3 +95,30 @@ var projects = {
         }
     ]
 }
+
+
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+
+$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+$("#header").append(HTMLbioPic.replace("%data%", bio.bioPic));
+$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+
+if (typeof bio.skills != "undefined" && bio.skills != null && bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart.replace("%data%", bio.skills));
+}
+
+function displayWork() {
+    for (var job = 0; job < work.jobs.length; job++) {
+        $("#workExperience").append(HTMLworkStart);
+        $(".work-entry:last").append(HTMLworkEmployer.replace("%data%", work.jobs[job].employer) 
+            + HTMLworkTitle.replace("%data%", work.jobs[job].title));
+        $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+        $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+    }
+}
+
+displayWork();
