@@ -86,16 +86,25 @@ var work = {
 }
 
 var projects = {
-    "projets" : [ 
+    "projects" : [ 
         {
-            "title" : "Sample Project 1",
-            "dates" : "2016",
+            "title" : "Air Force Satellite Control Network",
+            "dates" : "2013 - 2014",
+            "description" : "TODO: Air Force Satellite Control Network description",
+            "images" : ["images/afscn.png"]
+        },
+        {
+            "title" : "MILSATCOM",
+            "dates" : "2011 - 2013",
             "description" : "TODO: Sample project 1 description",
-            "images" : ["TODO: image 1 URL", "TODO: image 2 URL"]
+            "images" : ["images/milsatcom.png"]
         }
     ]
 }
 
+projects.object = function () {
+    for (int i=0; i < projects.projects.length; i++
+}
 
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
