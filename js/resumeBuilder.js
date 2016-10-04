@@ -91,7 +91,7 @@ var projects = {
             "title" : "Air Force Satellite Control Network",
             "dates" : "2013 - 2014",
             "description" : "TODO: Air Force Satellite Control Network description",
-            "images" : ["images/afscn.png"]
+            "images" : ["images/afscn.png", "images/afscn2.jpg", "images/afscn3.jpg"]
         },
         {
             "title" : "MILSATCOM",
@@ -102,9 +102,22 @@ var projects = {
     ]
 }
 
-projects.object = function () {
-    for (int i=0; i < projects.projects.length; i++
+projects.display = function () {
+    for (var i=0; i < projects.projects.length; i++) {
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
+        $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
+        $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
+
+        if (projects.projects[i].images.length > 0) {
+            for (var j=0; j < projects.projects[i].images.length; j++) {
+                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[j]));
+            }
+        }
+    }
 }
+
+
 
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
@@ -137,6 +150,8 @@ function displayWork() {
 }
 
 displayWork();
+projects.display();
+
 
 $("#main").append(internationalizeButton);
 
