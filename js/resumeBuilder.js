@@ -55,30 +55,35 @@ var work = {
         {
             "employer" : "United States Air Force",
             "title" : "Reservist / Captain",
+            "location" : "Los Angeles, CA, USA",
             "dates" : "2014 - present",
             "description" : "TODO: fill out description"
         },
         {
             "employer" : "United States Air Force",
             "title" : "Test Manager",
+            "location" : "Los Angeles AFB, CA, USA",
             "dates" : "2013 - 2014",
             "description" : "TODO: fill out description"
         },
         {
             "employer" : "United States Air Force",
             "title" : "Lead Software Engineer",
+            "location" : "Los Angeles AFB, CA, USA",
             "dates" : "2011 - 2013",
             "description" : "TODO: fill out description"
         },
         {
             "employer" : "Raytheon",
             "title" : "Software Quality Engineer",
+            "location" : "Fullerton, CA, USA",
             "dates" : "2008 - 2010",
             "description" : "TODO: fill out description"
         },
         {
             "employer" : "Conexant",
             "title" : "Design Verification & Test Engineer",
+            "location" : "Newport Beach, CA, USA",
             "dates" : "2006 - 2008",
             "description" : "TODO: fill out description"
         }
@@ -164,3 +169,5 @@ function inName(name){
 
     return name;
 }
+
+$("#mapDiv").append(googleMap);
