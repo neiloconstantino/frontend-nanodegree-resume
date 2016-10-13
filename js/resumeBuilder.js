@@ -64,7 +64,7 @@ var education = {
         "title": "Front End Web Developer",
         "school": "Udacity",
         "dates": "2016",
-        "url": "https://www.udacity.com/"
+        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     }],
     "display": function() {
         if (typeof education.schools != "undefined" && education.schools !== null && education.schools.length > 0) {
@@ -78,14 +78,14 @@ var education = {
                 $("#education").append(HTMLschoolStart);
                 $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree, formattedSchoolDates,
                     formattedSchoolLocation, formattedSchoolMajor);
-                $(".education-entry:last").children("a").attr("target", "_blank");
+                
             });
         }
 
         if (typeof education.onlineCourses != "undefined" && education.onlineCourses !== null && education.onlineCourses.length > 0) {
             $("#education").append(HTMLonlineClasses);
             education.onlineCourses.forEach(function(course) {
-                var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title);
+                var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", course.title).replace("#", course.url);
                 var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", course.school);
                 var formattedOnlineDates = HTMLonlineDates.replace("%data%", course.dates);
                 var formattedOnlineURL = HTMLonlineURL.replace("%data%", course.url).replace("#", course.url);
@@ -94,6 +94,7 @@ var education = {
                 $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool, formattedOnlineDates, formattedOnlineURL);
             });
         }
+        $(".education-entry:last").children("a").attr("target", "_blank");
     }
 };
 
@@ -122,14 +123,14 @@ var work = {
     }, {
         "employer": "Raytheon",
         "title": "Software Quality Engineer",
-        "location": "Fullerton, CA, USA",
+        "location": "Raytheon, Fullerton, CA, USA",
         "dates": "2008 - 2010",
         "description": "Ensured compliance to ISO 9001/AS9100/CMMI5 industry standards across 9 projects using six sigma methodologies.  Reviewed software test plans/procedures, operationally tested airspace command and control software used by US and allied countries.  Certified 7,000+ ground radar system components worth $1B achieving 100% product compliance to customer.  Conducted 30+ internal and supplier audits, implemented 50+ corrective actions for product/process improvements.",
         "url": "http://www.raytheon.com/"
     }, {
         "employer": "Conexant",
         "title": "Design Verification & Test Engineer",
-        "location": "Newport Beach, CA, USA",
+        "location": "Conexant, Newport Beach, CA, USA",
         "dates": "2006 - 2008",
         "description": "Designed test bench environments to conduct characterization, verification, and validation of semiconductor devices.  Authored test plans and developed automated test programs using LabVIEW reducing text execution times by 90%.",
         "url": "http://www.conexant.com/"
