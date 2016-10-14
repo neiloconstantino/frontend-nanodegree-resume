@@ -5,7 +5,7 @@ var bio = {
         "mobile": "(909) 720-7080",
         "email": "neiloconstantino@gmail.com",
         "github": "neiloconstantino",
-        "location": "Los Angeles, CA, USA"
+        "location": "Los Angeles, CA, USA",
     },
     "welcomeMessage": "Hello World!",
     "skills": ["Bootstrap", "CSS", "HTML", "JavaScript", "jQuery"],
@@ -158,12 +158,12 @@ var projects = {
         "title": "Air Force Satellite Control Network",
         "dates": "2013 - 2014",
         "description": "TODO: Air Force Satellite Control Network description",
-        "images": ["images/afscn.png", "images/afscn2.jpg", "images/afscn3.jpg"]
+        "images": ["images/afscn.png", "images/afscn2.jpg", "images/afscn3.jpg", "images/afscn4.jpg"]
     }, {
         "title": "MILSATCOM",
         "dates": "2011 - 2013",
         "description": "TODO: Sample project 1 description",
-        "images": ["images/milsatcom.png"]
+        "images": ["images/milsatcom.png", "images/milsatcom-aehf.jpg", "images/milsatcom-wgs.jpg"]
     }],
     "display": function() {
         if (typeof projects.projects != "undefined" && projects.projects !== null && projects.projects.length > 0) {
@@ -180,6 +180,8 @@ var projects = {
                         var formattedProjectImage = HTMLprojectImage.replace("%data%", image);
 
                         $(".project-entry:last").append(formattedProjectImage);
+                        $(".project-entry:last").children("img").css("max-width", "300px");
+                        $(".project-entry:last").children("img").css("width", "100%");
                     });
                 }
             });
